@@ -6,5 +6,5 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "GetData.py"]
+CMD ["python","GetData.py"]
 
