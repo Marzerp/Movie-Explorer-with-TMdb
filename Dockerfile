@@ -1,11 +1,11 @@
-# Usar Nginx como servidor web
-FROM nginx:latest
+FROM python:3.10
 
-# Copiar hello.html a la carpeta pública de Nginx
-COPY ./www/index.html /usr/share/nginx/html/
+WORKDIR /app
 
-# Exponer el puerto 80
-EXPOSE 80
+COPY . .
 
-# Ejecutar Nginx en primer plano
-CMD ["nginx", "-g", "daemon off;"]
+RUN pip install -r requirements.txt
+
+CMD ["python","GetData.py"]
+
+
