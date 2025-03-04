@@ -1,13 +1,17 @@
 import requests
 import pandas as pd
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
+#load_dotenv()
+#api_key = os.getenv("TMDB_API_KEY")
+#print(api_key)
 
-load_dotenv()
-api_key = os.getenv("TMDB_API_KEY")
-
-#with open('KEY.dat','r') as archivo:
-#  api_key =archivo.readline().strip()
+#current_dir = os.path.dirname(os.path.abspath(__file__))
+#file_path = os.path.join(current_dir, "KEY.dat")
+print("Iniciando programa ...")
+#with open(file_path,'r') as archivo:
+with open('/app/KEY.dat','r') as archivo:
+  api_key =archivo.readline().strip()
 
 url = f'https://api.themoviedb.org/3/trending/movie/week?api_key={api_key}&language=es-MX'
 response = requests.get(url)
